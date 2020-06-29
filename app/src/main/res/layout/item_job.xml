@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="loker"
+            type="com.example.lokerandroid.data.model.LowonganKerja" />
+        <variable
+            name="listener"
+            type="com.example.lokerandroid.ui.main.view.LokerClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:onClick="@{listener::onLokerClicked}">
+
+            <TextView
+                android:id="@+id/lokerId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="@{String.valueOf(loker.uuid)}"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:imageUrl="@{loker.gambar}"
+                android:padding="4dp" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/posisi"
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{loker.posisi}"
+                    android:textColor="#263238"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/namaPerusahaan"
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/posisi"
+                    android:text="@{loker.perusahaan}" />
+
+                <TextView
+                    android:id="@+id/cabang"
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/namaPerusahaan"
+                    android:text="@{loker.cabang}" />
+
+                <TextView
+                    android:id="@+id/lokasi"
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/namaPerusahaan"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/cabang"
+                    android:text="@{loker.lokasi}"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/cabang" />
+
+<!--                <TextView-->
+<!--                    android:id="@+id/kategori"-->
+<!--                    style="@style/Text"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@id/cabang"-->
+<!--                    android:text="@{loker.kategori}"/>-->
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

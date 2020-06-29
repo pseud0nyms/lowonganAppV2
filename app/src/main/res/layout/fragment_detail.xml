@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loker"
+            type="com.example.lokerandroid.data.model.LowonganKerja" />
+
+        <variable
+            name="palette"
+            type="com.example.lokerandroid.data.model.LokerPalette" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            tools:context=".ui.main.fragment.DetailFragment">
+
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:imageUrl="@{loker.gambar}"
+                android:minWidth="100dp"
+                android:minHeight="100dp" />
+
+            <TextView
+                android:id="@+id/posisi"
+                style="@style/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@id/logoImage"
+                android:text="@{loker.posisi}"
+                android:textSize="14sp"
+                android:layout_toEndOf="@id/logoImage" />
+
+            <TextView
+                android:id="@+id/namaPerusahaan"
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gaji"
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@id/logoImage"
+                android:text="@{loker.perusahaan}"
+                android:textSize="14sp"
+                android:layout_toEndOf="@id/logoImage" />
+
+            <TextView
+                android:id="@+id/cabang"
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gaji"
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@id/namaPerusahaan"
+                android:text="@{loker.cabang}"
+                android:textSize="14sp"
+                android:layout_toEndOf="@id/namaPerusahaan" />
+
+            <TextView
+                android:id="@+id/lokasi"
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gaji"
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@id/cabang"
+                android:text="@{loker.lokasi}"
+                android:textSize="14sp"
+                android:layout_toEndOf="@id/cabang" />
+
+            <TextView
+                android:id="@+id/gaji"
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/posisi"
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@id/logoImage"
+                android:text="@{loker.gaji}"
+                android:textSize="14sp"
+                android:layout_toEndOf="@id/logoImage" />
+
+            <View
+                android:id="@+id/pembatas1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/logoImage"
+                android:layout_margin="10dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/deskripsiTv"
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pembatas1"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:text="Job Description:"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/deskripsi"
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/deskripsiTv"
+                android:layout_margin="10dp"
+                android:text="@{loker.deskripsi}"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/pembatas2"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/deskripsi"
+                android:layout_margin="10dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/syaratTv"
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pembatas2"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:text="Qualifications:"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/syarat"
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/syaratTv"
+                android:layout_margin="10dp"
+                android:text="@{loker.syarat}"
+                android:layout_marginLeft="10dp"
+                android:textSize="14sp"
+                android:layout_marginStart="10dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

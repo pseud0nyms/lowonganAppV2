@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/job_navigation"
+    android:label="Halaman Utama"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.lokerandroid.ui.main.fragment.ListFragment"
+        android:label="Home">
+        <action
+            android:id="@+id/actionDetailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit" />
+        <action
+            android:id="@+id/actionSetings"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.lokerandroid.ui.main.fragment.DetailFragment"
+        android:label="Detail Jobs">
+        <action
+            android:id="@+id/actionListFragment"
+            app:destination="@id/listFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit" />
+        <argument
+            android:name="jobUuid"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.lokerandroid.ui.main.fragment.SettingsFragment"
+        android:label="Settings" />
+</navigation>
